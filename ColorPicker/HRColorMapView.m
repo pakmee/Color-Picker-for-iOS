@@ -182,9 +182,9 @@
     _initializeQueue = [[NSOperationQueue alloc] init];
     [_initializeQueue setSuspended:YES];
     [_initializeQueue addOperationWithBlock:^{
-        [self createColorMapLayer];
+  
         dispatch_async(dispatch_get_main_queue(), ^{
-
+            [self createColorMapLayer];
             [self.layer insertSublayer:self.colorMapBackgroundLayer atIndex:0];
             [self.layer insertSublayer:self.colorMapLayer atIndex:1];
             self.colorMapLayer.opacity = self.brightness;
